@@ -1,6 +1,6 @@
 ---
 - name: demo
-  hosts: Switch
+  hosts: DUC_host_SW
 
   tasks:
     - name: Create vlan
