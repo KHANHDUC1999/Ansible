@@ -1,7 +1,6 @@
 ---
 - name: tao vlan
   hosts: DUC_host_SW
-
   tasks:
     - name: Create vlan
       ios_vlan:
@@ -9,14 +8,13 @@
         name: "{{item.name}}"
         state: present
       with_items:
-        - { number: "33", name: "phong_nhan_su"}
-        - { number: "34", name: "phong_ke_toan"}
-
-      - name: show vlan
-        ios_command:
-          commands: 
-            - show vlan breif
-        register: show_vlan
-
-      - debug: var=show_vlan.stdout_lines
-
+        - number: "33"
+          name: phong_nhan_su
+        - number: "34"
+          name: phong_ke_toan
+    - name: show vlan
+      ios_command:
+        commands:
+          - show vlan breif
+      register: show_vlan
+    - debug: var=show_vlan.stdout_lines
