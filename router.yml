@@ -1,6 +1,6 @@
 ---
 - name: Set Ip Loobpack
-  hosts: all
+  hosts: Duc_host_Router
   gather_facts: no
 
   tasks:
